@@ -10,7 +10,7 @@ from events import Backup
 class Monitor():
     def __init__(self, src_path):
         self.__src_path = src_path
-        super().__init__()
+        # super().__init__() forgot what do this line do LoL.
         self.__event_handler = Backup()
         self.__event_observer = Observer()
         self.check_point = datetime.now()
