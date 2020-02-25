@@ -23,7 +23,7 @@ class Backup(FileSystemEventHandler):
     
     def __init__(self):
 
-        super().__init__()
+        # super().__init__()
 
         self.__checkpoint_daily = str(datetime.now())
         self.SNAPSHOT_PATH = '..' + str(datetime.now())
