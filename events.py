@@ -38,6 +38,15 @@ class Backup(FileSystemEventHandler):
 
         self.process(event)
 
+    def on_modified(self, event):
+        print("file modified")
+        file_size = -1
+        while file_size != os.path.getsize(event.src_path):
+            file_size = os.path.getsize(event.src_path)
+            time.sleep(1)
+
+        self.process(event)
+
     def process(self, event):
         print('backup file')
         print(event.src_path)
